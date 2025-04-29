@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class WindowsManager : MonoBehaviour
 {
-    // Referências para as telas
+    [Header("Telas")]
     [SerializeField] private GameObject telaChat;
     [SerializeField] private GameObject telaCompras;
     [SerializeField] private GameObject telaEstoque;
@@ -13,16 +13,15 @@ public class WindowsManager : MonoBehaviour
     [SerializeField] private GameObject telaGastos;
     [SerializeField] private GameObject telaInfo;
 
-    // Estrutura para armazenar botões e seus sprites
     [System.Serializable]
     public class BotaoTela
     {
-        public Button botao;           // O botão da tela
-        public Sprite normalSprite;    // Sprite para o estado não selecionado
-        public Sprite selectedSprite;  // Sprite para o estado selecionado
+        public Button botao;
+        public Sprite normalSprite;
+        public Sprite selectedSprite;
     }
 
-    // Referências para os botões e seus sprites
+    [Header("Botões")]
     [SerializeField] private BotaoTela botaoChat;
     [SerializeField] private BotaoTela botaoCompras;
     [SerializeField] private BotaoTela botaoEstoque;
@@ -30,26 +29,26 @@ public class WindowsManager : MonoBehaviour
     [SerializeField] private BotaoTela botaoVendas;
     [SerializeField] private BotaoTela botaoPontuacao;
 
-    // Método para mostrar uma tela específica e esconder as outras
+    /// <summary>
+    /// Ativa uma tela específica e atualiza o visual do botão correspondente
+    /// </summary>
     private void MostrarTela(GameObject tela, BotaoTela botaoSelecionado)
     {
-        // Esconde todas as telas primeiro
         EsconderTodasAsTelas();
-
-        // Reseta todos os botões para o sprite normal
         ResetarSpritesBotoes();
 
-        // Mostra apenas a tela especificada
-        if (tela != null) tela.SetActive(true);
+        if (tela != null) 
+            tela.SetActive(true);
 
-        // Muda o sprite do botão selecionado
         if (botaoSelecionado != null)
         {
             botaoSelecionado.botao.image.sprite = botaoSelecionado.selectedSprite;
         }
     }
 
-    // Método para esconder todas as telas
+    /// <summary>
+    /// Desativa todas as telas gerenciadas
+    /// </summary>
     public void EsconderTodasAsTelas()
     {
         telaChat.SetActive(false);
@@ -58,9 +57,10 @@ public class WindowsManager : MonoBehaviour
         telaProd.SetActive(false);
         telaVendas.SetActive(false);
         telaPontuacao.SetActive(false);
+        telaGastos.SetActive(false);
+        telaInfo.SetActive(false);
     }
 
-    // Método para resetar o sprite de todos os botões para o estado normal
     private void ResetarSpritesBotoes()
     {
         botaoChat.botao.image.sprite = botaoChat.normalSprite;
@@ -70,34 +70,15 @@ public class WindowsManager : MonoBehaviour
         botaoVendas.botao.image.sprite = botaoVendas.normalSprite;
     }
 
-    // Métodos para os botões que chamam MostrarTela com a tela e o botão desejados
-    public void MostrarTelaChat()
-    {
-        MostrarTela(telaChat, botaoChat);
-    }
+    #region Métodos Públicos para UI
+    // Os métodos abaixo são chamados pelos botões na interface
 
-    public void MostrarTelaCompras()
-    {
-        MostrarTela(telaCompras, botaoCompras);
-    }
+    public void MostrarTelaChat() => MostrarTela(telaChat, botaoChat);
+    public void MostrarTelaCompras() => MostrarTela(telaCompras, botaoCompras);
+    public void MostrarTelaEstoque() => MostrarTela(telaEstoque, botaoEstoque);
+    public void MostrarTelaProd() => MostrarTela(telaProd, botaoProd);
+    public void MostrarTelaVendas() => MostrarTela(telaVendas, botaoVendas);
+    public void MostrarTelaPontuacao() => MostrarTela(telaPontuacao, null);
 
-    public void MostrarTelaEstoque()
-    {
-        MostrarTela(telaEstoque, botaoEstoque);
-    }
-
-    public void MostrarTelaProd()
-    {
-        MostrarTela(telaProd, botaoProd);
-    }
-
-    public void MostrarTelaVendas()
-    {
-        MostrarTela(telaVendas, botaoVendas);
-    }
-
-    public void MostrarTelaPontuacao()
-    {
-        MostrarTela(telaPontuacao, null);
-    }
+    #endregion
 }
