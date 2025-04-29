@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3277540800008868772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2762945764510686062}
+  - component: {fileID: 8623168582399927937}
+  - component: {fileID: 8731333668003206869}
+  - component: {fileID: 5336042490608069681}
+  - component: {fileID: 141224722530848310}
+  m_Layer: 0
+  m_Name: GM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2762945764510686062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277540800008868772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8623168582399927937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277540800008868772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050a0eb4f484ca94e8f03208ae22afc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dinheiro: 10000
+  dinheiroInicial: 10000
+  estoqueMalhaPV: 0
+  estoqueElastico: 0
+  estoqueEmbalagens: 0
+  estoqueEtiquetas: 0
+  estoqueLinha: 0
+  estoqueProdutos: 0
+  precoMalhaPV: 10.84
+  precoElastico: 0.13
+  precoEmbalagens: 0.01
+  precoEtiquetas: 1
+  precoLinha: 2.35
+  inputQuantidadeMalha: {fileID: 0}
+  inputQuantidadeElastico: {fileID: 0}
+  inputQuantidadeEmbalagens: {fileID: 0}
+  inputQuantidadeEtiquetas: {fileID: 0}
+  inputQuantidadeLinha: {fileID: 0}
+  inputQuantidadeProduzir: {fileID: 0}
+  botaoMalhaPV: {fileID: 0}
+  botaoElastico: {fileID: 0}
+  botaoEmbalagens: {fileID: 0}
+  botaoEtiquetas: {fileID: 0}
+  botaoLinha: {fileID: 0}
+  botaoProducao: {fileID: 0}
+  botaoFuncionarioProducao: {fileID: 0}
+  textoPrecoMalhaPV: {fileID: 0}
+  textoPrecoElastico: {fileID: 0}
+  textoPrecoEmbalagens: {fileID: 0}
+  textoPrecoEtiquetas: {fileID: 0}
+  textoPrecoLinha: {fileID: 0}
+  textoDinheiro: {fileID: 0}
+  textoMateriasPrimas: {fileID: 0}
+  textoProdutosFuncionarios: {fileID: 0}
+  totalVendas: 0
+  funcionarios: 1
+  popUpErroProd: {fileID: 0}
+  popUpInfoFuncionarios: {fileID: 0}
+  produtosProduzidos: 0
+  scriptIA: {fileID: 141224722530848310}
+--- !u!114 &8731333668003206869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277540800008868772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3a5fbf2313edb4792edde37219852c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rodadaAtual: 0
+  demandaAtual: 0
+  tempoPorTurno: 300
+  temporizadorAtivo: 0
+  tempoOriginal: 0
+  textoRodada: {fileID: 0}
+  textoTempo: {fileID: 0}
+  textoFimJogoAliado: {fileID: 0}
+  textoFimJogoInimigo: {fileID: 0}
+  popUpNovoTurno: {fileID: 0}
+  popUpGastos: {fileID: 0}
+  demandaTxt: {fileID: 0}
+  desafioTxt: {fileID: 0}
+  _windowsManager: {fileID: 0}
+  scriptIA: {fileID: 141224722530848310}
+  gm: {fileID: 8623168582399927937}
+  vendaManager: {fileID: 0}
+  prefabSync: {fileID: 0}
+  descricaoDesafio: 
+  textoGastos: {fileID: 0}
+--- !u!114 &5336042490608069681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277540800008868772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4567478e505d8949bbb172f2136b594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnManager: {fileID: 8731333668003206869}
+  inputQuantidadeMalha: {fileID: 0}
+  inputQuantidadeElastico: {fileID: 0}
+  inputQuantidadeEmbalagens: {fileID: 0}
+  inputQuantidadeEtiquetas: {fileID: 0}
+  inputQuantidadeLinha: {fileID: 0}
+  inputQuantidadeVenda: {fileID: 0}
+  inputPrecoUnitarioVenda: {fileID: 0}
+  inputProducao: {fileID: 0}
+  gm: {fileID: 8623168582399927937}
+  telaResumo: {fileID: 0}
+  textoResumo: {fileID: 0}
+  valorVendaNoTurno: 0
+  vendasRealizadas: 0
+  totalVendasRealizadas: 0
+  totalDinheiroRecebido: 0
+  scriptIA: {fileID: 141224722530848310}
+--- !u!114 &141224722530848310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277540800008868772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb5510813decca44b10e2bf9fb042e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  producaoIA: 0
+  estoqueIA: 0
+  vendasTotaisIA: 0
+  valorTotalRecebidoIA: 0
+  finalVendasIA: 0
